@@ -34,7 +34,6 @@ h3 {
 }
 
 .table {
-    /* Ширина будет установлена через JavaScript */
     min-width: 70px;
     flex: 0 0 auto;
     scroll-snap-align: center;

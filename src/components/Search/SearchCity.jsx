@@ -2,9 +2,9 @@ import { TfiSearch } from "react-icons/tfi";
 import "./Search.css";
 import geoIcon from "../../assets/geoloc.svg";
 import { useState } from "react";
-import {fetchWeatherAPI} from "../../api.js";
+import { fetchWeatherAPI } from "../../api.js";
 
-function SearchCity({setWeather}) {
+function SearchCity({ setWeather }) {
   const [city, setCity] = useState(null);
 
   const handleInputChange = (e) => {
@@ -12,10 +12,11 @@ function SearchCity({setWeather}) {
   };
 
   const handleSearch = async () => {
-      const data = await fetchWeatherAPI(city);
-      setWeather(data);
-  }
-
+    if (!city.trim()) return;
+    const data = await fetchWeatherAPI(city);
+    setWeather(data);
+    setCity("");
+  };
 
   return (
     <div className="search_part">
@@ -26,6 +27,7 @@ function SearchCity({setWeather}) {
           onClick={handleSearch}
         />
         <input
+          value={city}
           placeholder="Your city"
           className="search__input"
           onChange={handleInputChange}

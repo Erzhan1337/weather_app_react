@@ -15,11 +15,11 @@ function CurrentData({ weather }) {
         const container = scrollRef.current;
         if (!container) return;
 
-        // Вычисляем ширину карточки при загрузке
+
         const updateCardWidth = () => {
             const containerWidth = container.offsetWidth;
-            const padding = 32; // 1rem с каждой стороны
-            const gaps = 12; // 0.75rem * 3 (между 4 карточками)
+            const padding = 32;
+            const gaps = 12;
             const calculatedWidth = (containerWidth - padding - gaps) / 4;
             setCardWidth(calculatedWidth);
 
@@ -41,7 +41,7 @@ function CurrentData({ weather }) {
             if (isScrolling) return;
 
             const scrollLeft = container.scrollLeft;
-            const cardStep = cardWidth + 12; // ширина карточки + gap
+            const cardStep = cardWidth + 12;
             const currentIndex = Math.round(scrollLeft / cardStep);
             const targetPosition = currentIndex * cardStep;
 
