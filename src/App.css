@@ -1,0 +1,19 @@
+* {
+    color: white;
+}
+
+.container {
+    width: 40vw;
+    height: 95vh;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: rebeccapurple;
+    background-image: url("./assets/clouds.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
